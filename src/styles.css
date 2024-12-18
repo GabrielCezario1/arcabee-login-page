@@ -1,0 +1,15 @@
+/* No seu styles.css */
+
+.toast-top-right {
+    top: 20px;
+    right: 20px;
+  }
+  
+  .toast-bottom-left {
+    bottom: 20px;
+    left: 20px;
+  }
+  
+  /* Personalizando o estilo do Toastr */
+  
+  
