@@ -1,15 +1,57 @@
-/* No seu styles.css */
+@import 'ngx-toastr/toastr';
 
+/* Personalizando o posicionamento do toast */
 .toast-top-right {
-    top: 20px;
-    right: 20px;
-  }
-  
-  .toast-bottom-left {
-    bottom: 20px;
-    left: 20px;
-  }
-  
-  /* Personalizando o estilo do Toastr */
-  
-  
+  top: 20px;
+  right: 20px;
+}
+
+.toast-bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+
+/* Efeitos de transição */
+.toast {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.toast.show {
+  opacity: 1;
+}
+
+/* Estilos dos diferentes tipos de toast */
+.toast-success {
+  background-color: #4CAF50; /* Verde para sucesso */
+  color: white;
+  border-left: 5px solid #388E3C; /* Bordas mais visíveis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+.toast-error {
+  background-color: #F44336; /* Vermelho para erro */
+  color: white;
+  border-left: 5px solid #D32F2F; /* Bordas mais visíveis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+.toast-warning {
+  background-color: #FF9800; /* Laranja para aviso */
+  color: white;
+  border-left: 5px solid #F57C00; /* Bordas mais visíveis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+.toast-info {
+  background-color: #2196F3; /* Azul para informação */
+  color: white;
+  border-left: 5px solid #1976D2; /* Bordas mais visíveis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+/* Ícones representando o tipo do toast */
+.toast .toast-icon {
+  margin-right: 10px;
+  font-size: 20px;
+}
