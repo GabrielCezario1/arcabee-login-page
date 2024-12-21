@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import * as CryptoJS from 'crypto-js'; 
+import { AppService } from '../../app.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -14,15 +15,14 @@ import * as CryptoJS from 'crypto-js';
 })
 
 export class CadastroComponent implements OnInit {
-  mockData = [
-    { username: 'gabriel', email: 'gabriel@arcabee.com', password: '4bfd772ec3cf0f0e2c121293557e1bb4bf342289c069f015911072cd27e74f37' }
-  ];
+
   cadastroForm!:FormGroup;
 
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private appService:AppService
   ) {}
 
   ngOnInit(): void {
@@ -42,16 +42,13 @@ export class CadastroComponent implements OnInit {
 
   onSubmit(): void {
     if (this.cadastroForm.valid) {
-      if (this.cadastroForm.valid) {
-        const { username, email, password } = this.cadastroForm.value;
-        const encryptedPassword = CryptoJS.SHA256(password).toString();
-        console.log('Usuário cadastrado com sucesso:', { username, email, encryptedPassword });
-
-        this.toastr.success('Cadastro realizado com sucesso!', 'Sucesso');
-        this.router.navigate(['/login']);
-      } else {
-        this.toastr.error('Por favor, preencha os campos corretamente.', 'Erro no Cadastro');
-      }
+      const { username, email, password } = this.cadastroForm.value;
+      const encryptedPassword = CryptoJS.SHA256(password).toString();
+      this.appService.cadastrarUsuario(username, email, encryptedPassword);
+      this.toastr.success('Cadastro realizado com sucesso!', 'Sucesso');
+      this.router.navigate(['/login']);
+    } else {
+      this.toastr.error('Por favor, preencha os campos corretamente.', 'Erro no Cadastro');
     }
   }
 }
