@@ -30,7 +30,7 @@ export class CadastroComponent implements OnInit {
       username: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', [Validators.required]]
+      confirmPassword: ['', [Validators.required],]
     }, { validator: this.passwordMatchValidator });
   }
 

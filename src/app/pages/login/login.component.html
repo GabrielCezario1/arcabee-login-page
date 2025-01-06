@@ -8,11 +8,7 @@
             <div class="col-lg-6">
               <div class="card-body p-md-5 mx-md-4">
                 <div class="text-center">
-                  <img
-                    src="assets/images/logo.webp"
-                    style="width: 185px;"
-                    alt="logo"
-                  />
+                  <img src="assets/images/logo.webp" style="width: 185px;" alt="logo" />
                   <h4 class="mt-1 mb-5 pb-1">ArcaBee</h4>
                 </div>
 
@@ -22,69 +18,53 @@
 
                   <div data-mdb-input-init class="form-outline mb-4">
                     <label class="form-label" for="form2Example11">Usuário</label>
-                    <input
-                      type="text"
-                      id="form2Example11"
-                      class="form-control"
-                      formControlName="username"
+                    <input type="text" id="form2Example11" class="form-control" formControlName="username"
                       placeholder="Digite seu usuário"
-                      [ngClass]="{'is-invalid': loginForm.get('username')?.invalid && loginForm.get('username')?.touched}"
-                    />
-                    <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="invalid-feedback">
+                      [ngClass]="{'is-invalid': loginForm.get('username')?.invalid && loginForm.get('username')?.touched}" />
+                    <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched"
+                      class="invalid-feedback">
                       O usuário é obrigatório.
                     </div>
                   </div>
 
                   <div data-mdb-input-init class="form-outline mb-4">
                     <label class="form-label" for="form2Example22">Senha</label>
-                    <input
-                      type="password"
-                      id="form2Example22"
-                      class="form-control"
-                      formControlName="password"
+                    <input type="password" id="form2Example22" class="form-control" formControlName="password"
                       placeholder="Digite sua senha"
-                      [ngClass]="{'is-invalid': loginForm.get('password')?.invalid && loginForm.get('password')?.touched}"
-                    />
-                    <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="invalid-feedback">
+                      [ngClass]="{'is-invalid': loginForm.get('password')?.invalid && loginForm.get('password')?.touched}" />
+                    <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+                      class="invalid-feedback">
                       A senha é obrigatória.
                     </div>
                   </div>
 
                   <div class="text-center pt-1 mb-5 pb-1">
-                    <button
-                      data-mdb-button-init
-                      data-mdb-ripple-init
-                      class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
-                      type="submit"
-                      [disabled]="loginForm.invalid"
-                    >
+                    <button data-mdb-button-init data-mdb-ripple-init
+                      class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit"
+                      [disabled]="loginForm.invalid">
                       Log in
                     </button>
-                    <a class="text-muted d-block" href="#!">Esqueceu a senha?</a>
-                  </div>                  
+                    <a class="text-muted d-block" href="/cadastro">Esqueceu a senha?</a>
+                  </div>
 
                   <div class="d-flex align-items-center justify-content-center pb-4">
-                    <p class="mb-0 me-2">Você não tem uma conta?</p>
-                    <button
-                      type="button"
-                      data-mdb-button-init
-                      data-mdb-ripple-init
-                      class="btn btn-outline-danger"
-                    >
+                    <a class="mb-0 me-2 text-muted d-block" href="/cadastro">Você não tem uma conta?</a>
+                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-danger"
+                      (click)="navigateToCadastro()">
                       Criar conta
                     </button>
                   </div>
-                </form> 
+                </form>
               </div>
             </div>
 
-            <!-- Lado direito com conteúdo informativo -->
             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
               <div class="text-white px-3 py-4 p-md-5 mx-md-4">
                 <h4 class="mb-4">Somos mais que uma empresa</h4>
                 <p class="small mb-0">
-                  Oferecemos inovação, agilidade e o acesso a materiais e blocos, 
-                  tornando o trabalho do arquiteto mais simples e produtivo.
+                  Apoiar arquitetos e designers de interiores, simplificando o trabalho através de extensa biblioteca
+                  BIM e ampliando o conhecimento através de educação contínua e promoção de uma comunidade colaborativa,
+                  através de inspiração e inovação.
                 </p>
               </div>
             </div>
